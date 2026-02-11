@@ -1,0 +1,553 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Handyman Recruitment Agency website (public pages, forms + uploads, admin dashboard, SEO)",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "summary": "Create public site pages and routing (Home, Registration, Hire, Services, About, Contact, Privacy Policy) plus Admin route with navigation including mobile hamburger menu.",
+      "acceptanceCriteria": [
+        "A top navigation (and mobile hamburger menu) links to all pages.",
+        "All pages render correctly on mobile and desktop.",
+        "Routes are accessible directly via URL without blank screens."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "create",
+          "description": "Create the app shell with client-side routing for all required pages (including /admin), plus shared layout wrapper (header/nav/footer) and route-level not-found handling."
+        },
+        {
+          "path": "frontend/src/main.tsx",
+          "operation": "modify",
+          "description": "Ensure the root renders the new App routing structure and global providers (React Query + Internet Identity) remain intact."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "create",
+          "description": "Create shared layout with header, footer, and an outlet area used by all public pages; include consistent spacing and responsive container."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "create",
+          "description": "Create responsive top navigation with desktop links and a mobile hamburger menu. Use shadcn-ui components (e.g., Button/Sheet/NavigationMenu) to implement accessible nav behavior; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "create",
+          "description": "Create footer with required links (including Privacy Policy) and basic contact shortcut links."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "create",
+          "description": "Create Home page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "create",
+          "description": "Create Handyman Registration page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/HireHandymanPage.tsx",
+          "operation": "create",
+          "description": "Create Hire a Handyman page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "create",
+          "description": "Create Services Offered page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "create",
+          "description": "Create About Us page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "create",
+          "description": "Create Contact page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "create",
+          "description": "Create Privacy Policy page route component and wire it in App routing."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "operation": "create",
+          "description": "Create Admin dashboard route component and wire it in App routing (behind an auth/admin guard)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "summary": "Apply a consistent professional theme (Black/Yellow/Navy) with bold headings, high-contrast CTAs, simple typography, and accessible UI styling.",
+      "acceptanceCriteria": [
+        "Primary buttons use high-contrast styling and are easily tappable on mobile.",
+        "Typography is consistent across all pages (headings, body, labels).",
+        "No blue/purple default theme is used unless it matches the specified Navy tone."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/index.css",
+          "operation": "create",
+          "description": "Add global Tailwind base styles and CSS variables to define the Black/Yellow/Navy palette, typography scale, focus states, and consistent form styles."
+        },
+        {
+          "path": "frontend/tailwind.config.js",
+          "operation": "modify",
+          "description": "Extend Tailwind theme tokens to include brand colors (Black/Yellow/Navy) and ensure primary/secondary colors map to the new CSS variables for consistent usage across pages."
+        },
+        {
+          "path": "frontend/src/components/ui/BrandButton.tsx",
+          "operation": "create",
+          "description": "Create a small wrapper component around existing shadcn-ui Button to enforce consistent CTA sizing and brand variants without modifying immutable ui components; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/ui/SectionHeading.tsx",
+          "operation": "create",
+          "description": "Create a reusable heading block enforcing consistent H1/H2 styles and spacing (trade/industrial look) across pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "summary": "Add the uploaded agency logo as a static asset and use it in the header and Home hero.",
+      "acceptanceCriteria": [
+        "Logo file is stored as a static asset (not served through the backend).",
+        "Header displays the logo and the agency name.",
+        "Logo scales correctly on mobile without distortion or overflow."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/public/assets/20260211_195621.png",
+          "operation": "create",
+          "description": "Add the provided logo file as a static public asset for direct use by the frontend."
+        },
+        {
+          "path": "frontend/src/components/Brand/Logo.tsx",
+          "operation": "create",
+          "description": "Create a responsive Logo component that renders the static logo asset with proper alt text and sizing constraints."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Render the Logo component and agency name in the header; keep it responsive for mobile."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Use the Logo component within the hero area to reinforce branding."
+        }
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "summary": "Implement Home page content including CTAs, contact links, operating locations, and a 3-step 'How it works' section.",
+      "acceptanceCriteria": [
+        "CTA buttons navigate to the correct pages.",
+        "Phone link uses tel: and WhatsApp link opens wa.me (or api.whatsapp.com) for 0712115763.",
+        "Email link uses mailto:hragency415@gmail.com.",
+        "Operating locations and 3-step section are visible above the fold on mobile (or with minimal scrolling)."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add the required Home content: short intro, two primary CTA buttons routing to Registration and Hire pages, clickable call/WhatsApp/email/Facebook links, operating locations (Uitenhage, Gqeberha), and a 3-step 'How it works' section with clear headings and mobile-first layout."
+        },
+        {
+          "path": "frontend/src/utils/contactLinks.ts",
+          "operation": "create",
+          "description": "Centralize formatting helpers for tel/mailto/WhatsApp/Facebook links to keep behavior consistent across Home and Contact pages."
+        }
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "summary": "Add a floating WhatsApp button anchored bottom-right across all public pages.",
+      "acceptanceCriteria": [
+        "Floating button is visible on all public pages and does not block key UI elements.",
+        "Clicking the button opens WhatsApp chat for 0712115763."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/WhatsAppFloatingButton.tsx",
+          "operation": "create",
+          "description": "Create a floating action button component anchored bottom-right linking to WhatsApp for 0712115763, with accessible label and responsive offsets."
+        },
+        {
+          "path": "frontend/src/components/layout/SiteLayout.tsx",
+          "operation": "modify",
+          "description": "Include the floating WhatsApp button on all public pages while excluding/avoiding interference with admin UI when appropriate."
+        }
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "summary": "Build Handyman Registration form with validation, document uploads, backend submission, and an on-screen confirmation message.",
+      "acceptanceCriteria": [
+        "Form validates required fields and prevents submit when missing.",
+        "CV upload enforces PDF; other documents accept common image/PDF formats.",
+        "After successful submit, the confirmation message is shown and the form is cleared or disabled to prevent accidental resubmission.",
+        "Submission is persisted in the backend and visible in the admin dashboard."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "modify",
+          "description": "Implement the full registration form UI (personal info + work info + uploads), client-side validation, submit flow to backend registerCandidate, and success message handling (disable or reset form on success)."
+        },
+        {
+          "path": "frontend/src/hooks/useCandidateRegistration.ts",
+          "operation": "create",
+          "description": "Create a hook to orchestrate candidate registration: call registerCandidate, then upload documents via uploadCandidateDocument; use the blob-storage ExternalBlob class for file uploads and progress reporting; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/forms/DocumentUploadField.tsx",
+          "operation": "create",
+          "description": "Create a reusable file input component with accept rules (CV: PDF only; others: PDF/images), size hints, and inline validation errors."
+        },
+        {
+          "path": "frontend/src/components/ui/FormField.tsx",
+          "operation": "create",
+          "description": "Create a small reusable labeled field wrapper to enforce consistent label/input associations and error rendering across forms."
+        }
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "summary": "Build Hire a Handyman enquiry form that stores to backend and shows on-screen confirmation (no email).",
+      "acceptanceCriteria": [
+        "Form submission persists to backend and appears in admin dashboard.",
+        "After submit, an on-screen confirmation message is displayed.",
+        "No outbound email is attempted."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HireHandymanPage.tsx",
+          "operation": "modify",
+          "description": "Implement the client enquiry form with required fields, optional company name, validation, submit via submitEnquiry, and on-screen confirmation message (no email behaviors)."
+        },
+        {
+          "path": "frontend/src/hooks/useEnquirySubmission.ts",
+          "operation": "create",
+          "description": "Create a hook that submits EnquiryInput via the backend actor and returns success/error state for UI rendering."
+        }
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "summary": "Build Contact page with clickable contact details plus candidate/client contact forms that store messages in backend (no email).",
+      "acceptanceCriteria": [
+        "Contact details render as clickable links.",
+        "Both forms save submissions in backend storage and are viewable in admin.",
+        "No outbound email is attempted."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Render clickable phone/WhatsApp/email/Facebook links, operating areas, and two simple forms (candidate + client) that submit to backend submitContactMessage and show on-screen confirmations (no email behaviors)."
+        },
+        {
+          "path": "frontend/src/hooks/useContactSubmission.ts",
+          "operation": "create",
+          "description": "Create a hook to submit ContactInput (with contactType client/candidate) and return success/error state for UI rendering."
+        },
+        {
+          "path": "frontend/src/components/contact/ContactDetailsCard.tsx",
+          "operation": "create",
+          "description": "Create a reusable component to render the contact details block consistently (Home can optionally reuse later without adding new routes)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "summary": "Create Services Offered and About Us pages with professional copy matching the brief.",
+      "acceptanceCriteria": [
+        "Services page lists all requested bullet points.",
+        "About page includes background, mission, vision, and commitment in a concise format."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Add concise services copy and bullet lists for clients and candidates exactly as requested, using semantic headings and accessible lists."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Add concise background, mission, vision, and commitment sections with semantic headings."
+        }
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "summary": "Support secure document upload flow in the UI and restrict document access to authorized admins (download via admin dashboard only).",
+      "acceptanceCriteria": [
+        "Candidate document uploads complete successfully and are tied to the correct candidate record.",
+        "Admin can download each uploaded document from the dashboard.",
+        "Uploaded documents are not publicly accessible via the public site UI."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/hooks/useCandidateRegistration.ts",
+          "operation": "modify",
+          "description": "Ensure the upload flow associates each uploaded document to the returned candidateId using uploadCandidateDocument; use blob-storage ExternalBlob for uploads; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/DocumentDownloadList.tsx",
+          "operation": "create",
+          "description": "Create an admin-only document list that renders available documents and provides download/open actions via each Document.blob.getDirectURL(); use blob-storage ExternalBlob capabilities for direct URL access; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the public registration page never exposes direct download URLs after upload (only show local filenames/status, not stored blob URLs)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "summary": "Build Admin dashboard UI for viewing/filtering candidate registrations and other submissions, viewing details, downloading documents, and updating/deleting records.",
+      "acceptanceCriteria": [
+        "Admin dashboard is not accessible to anonymous users.",
+        "Candidate list supports filtering by Trade/Skill.",
+        "Admin can open a candidate detail view and download each uploaded document.",
+        "Admin can update and delete a candidate/enquiry/message and the list reflects changes."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Implement dashboard layout with tabs/sections for Candidates, Enquiries, and Contact Messages; wire list + detail views and CRUD actions to backend actor functions."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/CandidateList.tsx",
+          "operation": "create",
+          "description": "Create candidates table/list with filter by trade/skill (client-side input + server-backed getCandidatesByTrade option) and selectable row to open details."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/CandidateDetail.tsx",
+          "operation": "create",
+          "description": "Create candidate detail panel showing all fields and embedded DocumentDownloadList; include update form and delete action with confirmations."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/EnquiryList.tsx",
+          "operation": "create",
+          "description": "Create enquiries list/detail with delete action and basic fields rendering."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/ContactMessageList.tsx",
+          "operation": "create",
+          "description": "Create contact messages list/detail with delete action and basic fields rendering."
+        },
+        {
+          "path": "frontend/src/hooks/admin/useAdminData.ts",
+          "operation": "create",
+          "description": "Create React Query hooks for loading admin datasets (getAllCandidates/getAllEnquiries/getAllContactMessages) and performing mutations (update/delete) with cache invalidation."
+        }
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "summary": "Add Internet Identity admin authentication and enforce admin-only access in the UI with allowlist-oriented setup and principal display.",
+      "acceptanceCriteria": [
+        "Unauthenticated users cannot access admin data endpoints (backend rejects calls).",
+        "Admin UI displays the current principal and whether it is authorized.",
+        "Authorized principal(s) can perform admin operations successfully."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/admin/AdminGuard.tsx",
+          "operation": "create",
+          "description": "Create a route guard that requires Internet Identity login and checks admin authorization before rendering admin routes; on unauthorized, show an access denied screen. Use the authorization component’s frontend guidance for handling authorization failures; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Display the currently signed-in principal string (for setup) plus an 'authorized/unauthorized' status derived from isCallerAdmin/getCallerUserRole."
+        },
+        {
+          "path": "frontend/src/pages/admin/components/AdminSetupPanel.tsx",
+          "operation": "create",
+          "description": "Provide a simple allowlist setup UI: show current principal, allow entering another principal and assigning a role via assignCallerUserRole (admin-only action). Use the authorization component patterns and handle errors gracefully; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/auth/LoginButton.tsx",
+          "operation": "create",
+          "description": "Create a login/logout button using the Internet Identity hook. Follow the authorization component's recommended login/logout + query cache clearing behavior; verify the component's usage instructions before implementing."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Add an Admin link plus a LoginButton entry; ensure the Admin link remains visible but guarded on route access (no data shown to anonymous users)."
+        },
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Wrap /admin routes with AdminGuard and ensure direct URL navigation is handled (authorized -> dashboard, unauthorized -> access denied screen)."
+        }
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "summary": "Implement basic SEO readiness: per-route meta titles/descriptions, semantic headings/labels, robots.txt, sitemap, and social sharing assets.",
+      "acceptanceCriteria": [
+        "Each main route has a unique meta title and meta description.",
+        "robots.txt and sitemap are available as static files.",
+        "Forms use proper label associations and pages use clear H1/H2 structure."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Seo.tsx",
+          "operation": "create",
+          "description": "Create a small per-page SEO helper to set document title and update/insert meta description and Open Graph tags at runtime without adding heavy dependencies."
+        },
+        {
+          "path": "frontend/src/pages/HomePage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component and ensure H1/H2 structure is semantic."
+        },
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component; ensure accessible labels are properly associated with inputs and file fields."
+        },
+        {
+          "path": "frontend/src/pages/HireHandymanPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component; ensure semantic headings and labeled fields."
+        },
+        {
+          "path": "frontend/src/pages/ServicesPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component and semantic headings."
+        },
+        {
+          "path": "frontend/src/pages/AboutPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component and semantic headings."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component and ensure both forms use proper label associations."
+        },
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "modify",
+          "description": "Add unique meta title/description via Seo component and semantic headings."
+        },
+        {
+          "path": "frontend/public/robots.txt",
+          "operation": "create",
+          "description": "Add robots.txt allowing indexing and referencing the sitemap location."
+        },
+        {
+          "path": "frontend/public/sitemap.xml",
+          "operation": "create",
+          "description": "Add a static sitemap.xml listing all main routes (including privacy policy; exclude admin if desired for public indexing)."
+        },
+        {
+          "path": "frontend/public/assets/generated/favicon.dim_512x512.png",
+          "operation": "create",
+          "description": "Add the required generated square favicon asset based on the provided logo."
+        },
+        {
+          "path": "frontend/public/assets/generated/og-image.dim_1200x630.png",
+          "operation": "create",
+          "description": "Add the required generated Open Graph share image asset with the logo on brand background."
+        },
+        {
+          "path": "frontend/index.html",
+          "operation": "modify",
+          "description": "Wire static SEO defaults: set favicon to frontend/public/assets/generated/favicon.dim_512x512.png, and add Open Graph meta tags referencing frontend/public/assets/generated/og-image.dim_1200x630.png as the default share image."
+        }
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "summary": "Add a POPIA-oriented Privacy Policy page and link it from the footer.",
+      "acceptanceCriteria": [
+        "Privacy Policy page exists and is linked from the site footer.",
+        "Content clearly describes collection and use of personal data and uploaded documents in plain English."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "operation": "modify",
+          "description": "Implement Privacy Policy copy covering what is collected, why, retention, access/deletion requests, document handling, and contact details (POPIA-oriented plain English)."
+        },
+        {
+          "path": "frontend/src/components/layout/Footer.tsx",
+          "operation": "modify",
+          "description": "Add a clear Privacy Policy link in the footer that routes to the Privacy Policy page."
+        }
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "summary": "Ensure mobile-first performance and usability: responsive layouts, optimized images, and fast form interactions.",
+      "acceptanceCriteria": [
+        "All pages are usable on a phone-sized viewport without horizontal scrolling.",
+        "Largest images are sized appropriately and do not cause noticeable layout shifts.",
+        "Form interactions (typing, selecting files, submitting) remain responsive on mobile."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/components/Brand/Logo.tsx",
+          "operation": "modify",
+          "description": "Ensure logo rendering uses explicit sizing constraints and responsive behavior to minimize layout shift and prevent overflow on small screens."
+        },
+        {
+          "path": "frontend/src/components/layout/TopNav.tsx",
+          "operation": "modify",
+          "description": "Ensure mobile menu interactions are lightweight and accessible; keep tap targets large and prevent layout jank."
+        },
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "modify",
+          "description": "Ensure file input UX is mobile-friendly (clear labels, accept filters, helper text) and avoid blocking UI during upload by showing progress state."
+        },
+        {
+          "path": "frontend/src/index.css",
+          "operation": "modify",
+          "description": "Add global responsive defaults (max-width handling for images, consistent spacing, focus-visible styles) to prevent horizontal scrolling and improve mobile ergonomics."
+        }
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "summary": "Remove/omit any outbound email behavior; use on-screen confirmations and admin visibility only.",
+      "acceptanceCriteria": [
+        "No code path attempts to send emails.",
+        "All form submissions provide an immediate on-screen success message.",
+        "Admin can see all submissions that would otherwise have been emailed."
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/pages/HireHandymanPage.tsx",
+          "operation": "modify",
+          "description": "Ensure the submission flow is storage-only with an on-screen confirmation message and no mention/attempt of outbound email."
+        },
+        {
+          "path": "frontend/src/pages/ContactPage.tsx",
+          "operation": "modify",
+          "description": "Ensure both contact forms store to backend and show on-screen confirmations (no outbound email behaviors)."
+        },
+        {
+          "path": "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "operation": "modify",
+          "description": "Ensure registration submission uses backend storage + uploads only and always shows the required confirmation text after successful submit."
+        },
+        {
+          "path": "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "operation": "modify",
+          "description": "Ensure admin dashboard prominently surfaces stored submissions so email is not needed for operational visibility."
+        }
+      ]
+    }
+  ]
+}

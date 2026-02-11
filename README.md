@@ -1,2 +1,3 @@
-# handyman-recruitment-agency
-Exported from Caffeine project: Handyman Recruitment Agency
+## Handyman Recruitment Agency
+
+To run app build and run docker image: `docker build -t app . docker run -it --network host app`

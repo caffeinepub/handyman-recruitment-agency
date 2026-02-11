@@ -1,0 +1,75 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T20:27:03.302Z",
+  "summary": "Diff adds a TanStack Router-based multi-page frontend with shared layout (top nav, footer, WhatsApp floating button), Internet Identity login components, an admin-guarded dashboard, and a new Motoko backend actor with candidate/enquiry/contact types plus candidate registration and document upload entrypoints. Some requested navigation/admin capabilities and branding/SEO assets cannot be fully verified due to truncation/omitted files, but at least one explicit navigation requirement (Privacy link in top nav) appears missing, and admin update functionality is not evident in the visible dashboard code.",
+  "missing_requirements": [
+    {
+      "id": "REQ-1",
+      "requirement": "Top navigation links to all pages, including Privacy Policy.",
+      "reason": "Top navigation links list does not include a link to the Privacy Policy route (/privacy).",
+      "evidence": [
+        "frontend/src/components/layout/TopNav.tsx"
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "requirement": "Admin can update records (candidate/enquiry/message) from the admin dashboard.",
+      "reason": "The visible admin dashboard code shows delete mutations for candidates/enquiries/messages, but no update/edit flows or update mutations are shown in the provided (truncated but sizeable) excerpt.",
+      "evidence": [
+        "frontend/src/pages/admin/AdminDashboardPage.tsx"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Footer includes a promotional 'Built with caffeine.ai' link and branding.",
+      "reason": "BuildRequest does not ask for third-party promotional attribution in the site footer.",
+      "evidence": [
+        "frontend/src/components/layout/Footer.tsx"
+      ]
+    },
+    {
+      "description": "Admin access control initialization via a secret URL parameter 'caffeineAdminToken' and calling _initializeAccessControlWithSecret().",
+      "reason": "BuildRequest specifies an allowlist mechanism for admin principals with Internet Identity, but does not request a secret token via URL parameter or a secret-based initialization step.",
+      "evidence": [
+        "frontend/src/hooks/useActor.ts"
+      ]
+    }
+  ],
+  "confidence": 0.62,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/robots.txt",
+    "frontend/public/sitemap.xml",
+    "frontend/src/App.tsx",
+    "frontend/src/components/Brand/Logo.tsx",
+    "frontend/src/components/SectionHeading.tsx",
+    "frontend/src/components/Seo.tsx",
+    "frontend/src/components/WhatsAppFloatingButton.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/SiteLayout.tsx",
+    "frontend/src/components/layout/TopNav.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/HandymanRegistrationPage.tsx",
+    "frontend/src/pages/HireHandymanPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PrivacyPolicyPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/pages/admin/AdminDashboardPage.tsx",
+    "frontend/src/pages/admin/AdminGuard.tsx",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

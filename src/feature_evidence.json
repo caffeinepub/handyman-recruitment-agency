@@ -1,0 +1,363 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-create-the-public-site-pages-and-navigation-for-handyman-recruitment-agency-home-handyman-registration-hire-a-handyman-services-offered-about-us-contact-privacy-policy-and-admin",
+      "featureTitle": "Create the public site pages and navigation for Handyman Recruitment Agency: Home, Handyman Registration, Hire a Handyman, Services Offered, About Us, Contact, Privacy Policy, and Admin.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/main.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/HandymanRegistrationPage.tsx",
+        "frontend/src/pages/HireHandymanPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx",
+        "frontend/src/pages/admin/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-1"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-apply-a-consistent-professional-visual-theme-using-the-brand-colors-black-yellow-and-navy-with-a-clean-trade-industrial-look-bold-headings-high-contrast-buttons-simple-icons-and-large-clear-ctas",
+      "featureTitle": "Apply a consistent professional visual theme using the brand colors Black, Yellow, and Navy, with a clean 'trade/industrial' look (bold headings, high-contrast buttons, simple icons) and large clear CTAs.",
+      "files": [
+        "frontend/src/index.css",
+        "frontend/tailwind.config.js"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-2"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-the-uploaded-agency-logo-20260211-195621-png-as-a-static-asset-and-use-it-in-the-site-header-and-home-page-hero-area",
+      "featureTitle": "Add the uploaded agency logo (20260211_195621.png) as a static asset and use it in the site header and Home page hero area.",
+      "files": [
+        "frontend/src/components/Brand/Logo.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-3"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-the-home-page-content-short-intro-cta-buttons-for-register-as-a-handyman-and-hire-a-handyman-contact-number-0712115763-click-to-call-whatsapp-link-email-link-to-hragency415-gmail-com-facebook-link-text-handyman-recruitment-agency-operating-locations-uitenhage-and-gqeberha-and-a-simple-3-step-how-it-works-section",
+      "featureTitle": "Implement the Home page content: short intro, CTA buttons for “Register as a Handyman” and “Hire a Handyman”, contact number 0712115763 (click-to-call + WhatsApp link), email link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating locations (Uitenhage and Gqeberha), and a simple 3-step “How it works” section.",
+      "files": [
+        "frontend/src/pages/HomePage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-4"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-floating-whatsapp-button-anchored-bottom-right-across-the-public-site-linking-to-whatsapp-chat-for-0712115763",
+      "featureTitle": "Add a floating WhatsApp button anchored bottom-right across the public site, linking to WhatsApp chat for 0712115763.",
+      "files": [
+        "frontend/src/components/WhatsAppFloatingButton.tsx",
+        "frontend/src/components/layout/SiteLayout.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-5"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-handyman-registration-page-with-a-simple-form-capturing-personal-information-full-name-id-number-phone-number-email-address-physical-address-work-information-trade-skill-years-of-experience-areas-willing-to-work-in-and-document-uploads-for-cv-pdf-id-copy-matric-certificate-qualification-trade-certificate-on-submit-store-the-submission-and-show-confirmation-text-your-application-has-been-received-we-will-contact-you-if-shortlisted",
+      "featureTitle": "Build the Handyman Registration page with a simple form capturing personal information (Full Name, ID Number, Phone Number, Email Address, Physical Address), work information (Trade/Skill, Years of Experience, Areas willing to work in), and document uploads for CV (PDF), ID Copy, Matric Certificate, Qualification/Trade Certificate; on submit, store the submission and show confirmation text: “Your application has been received. We will contact you if shortlisted.”",
+      "files": [
+        "frontend/src/pages/HandymanRegistrationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-6"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-hire-a-handyman-page-with-a-client-enquiry-form-full-name-company-name-optional-phone-number-email-type-of-service-needed-location-message-on-submit-store-the-enquiry-and-show-an-on-screen-confirmation-message-no-email",
+      "featureTitle": "Build the Hire a Handyman page with a client enquiry form (Full Name, Company Name (optional), Phone Number, Email, Type of service needed, Location, Message); on submit, store the enquiry and show an on-screen confirmation message (no email).",
+      "files": [
+        "frontend/src/pages/HireHandymanPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-7"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-the-contact-page-including-clickable-phone-0712115763-whatsapp-link-button-to-0712115763-mailto-link-to-hragency415-gmail-com-facebook-link-text-handyman-recruitment-agency-operating-areas-uitenhage-and-gqeberha-plus-simple-candidate-and-client-contact-forms-that-store-messages-in-the-backend-no-email",
+      "featureTitle": "Build the Contact page including: clickable phone 0712115763, WhatsApp link/button to 0712115763, mailto link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating areas (Uitenhage and Gqeberha), plus simple candidate and client contact forms that store messages in the backend (no email).",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-create-services-offered-and-about-us-pages-with-short-professional-copy-matching-the-brief-client-services-candidate-services-mission-vision-commitment",
+      "featureTitle": "Create Services Offered and About Us pages with short, professional copy matching the brief (client services, candidate services; mission, vision, commitment).",
+      "files": [
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-9"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-secure-document-upload-handling-allow-uploading-the-required-candidate-documents-store-them-in-the-backend-associated-to-the-candidate-record-and-allow-authorized-admin-users-to-download-them-via-the-admin-dashboard",
+      "featureTitle": "Implement secure document upload handling: allow uploading the required candidate documents, store them in the backend associated to the candidate record, and allow authorized admin users to download them via the admin dashboard.",
+      "files": [
+        "frontend/src/pages/HandymanRegistrationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-11"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-build-an-admin-dashboard-that-lets-an-authorized-admin-view-candidate-registrations-and-client-contact-submissions-filter-candidates-by-trade-skill-view-submission-details-download-candidate-documents-update-and-delete-records",
+      "featureTitle": "Build an Admin dashboard that lets an authorized admin: view candidate registrations and client/contact submissions; filter candidates by Trade/Skill; view submission details; download candidate documents; update and delete records.",
+      "files": [
+        "frontend/src/pages/admin/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-12"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-admin-authentication-using-internet-identity-and-enforce-backend-authorization-checks-for-all-admin-only-operations-list-all-records-download-documents-update-delete-provide-a-simple-allowlist-mechanism-for-admin-principals-and-show-the-currently-signed-in-principal-in-the-admin-ui-for-setup",
+      "featureTitle": "Add admin authentication using Internet Identity and enforce backend authorization checks for all admin-only operations (list all records, download documents, update/delete). Provide a simple allowlist mechanism for admin principals and show the currently signed-in principal in the admin UI for setup.",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/auth/LoginButton.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/pages/admin/AdminDashboardPage.tsx",
+        "frontend/src/pages/admin/AdminGuard.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-13"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-implement-basic-seo-and-google-indexing-readiness-set-page-specific-meta-titles-descriptions-add-a-robots-txt-and-sitemap-and-ensure-semantic-headings-and-accessible-form-labels",
+      "featureTitle": "Implement basic SEO and Google indexing readiness: set page-specific meta titles/descriptions, add a robots.txt and sitemap, and ensure semantic headings and accessible form labels.",
+      "files": [
+        "frontend/index.html",
+        "frontend/public/robots.txt",
+        "frontend/public/sitemap.xml",
+        "frontend/src/components/Seo.tsx",
+        "frontend/src/pages/AboutPage.tsx",
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/HandymanRegistrationPage.tsx",
+        "frontend/src/pages/HireHandymanPage.tsx",
+        "frontend/src/pages/HomePage.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx",
+        "frontend/src/pages/ServicesPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-14"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-add-a-privacy-policy-page-addressing-popia-oriented-handling-of-personal-data-and-documents-what-is-collected-why-retention-access-deletion-requests-and-contact-details",
+      "featureTitle": "Add a Privacy Policy page addressing POPIA-oriented handling of personal data and documents (what is collected, why, retention, access/deletion requests, and contact details).",
+      "files": [
+        "frontend/src/components/layout/Footer.tsx",
+        "frontend/src/pages/PrivacyPolicyPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-15"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-ensure-the-public-site-is-fast-and-mobile-first-optimize-images-avoid-heavy-assets-and-ensure-forms-and-buttons-are-easy-to-use-on-small-screens",
+      "featureTitle": "Ensure the public site is fast and mobile-first: optimize images, avoid heavy assets, and ensure forms and buttons are easy to use on small screens.",
+      "files": [
+        "frontend/src/components/Brand/Logo.tsx",
+        "frontend/src/components/layout/TopNav.tsx",
+        "frontend/src/index.css",
+        "frontend/src/pages/HandymanRegistrationPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-16"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-because-email-sending-is-disabled-remove-omit-all-outbound-email-behaviors-and-replace-them-with-on-screen-confirmation-messages-and-admin-dashboard-visibility-of-submissions",
+      "featureTitle": "Because email sending is disabled, remove/omit all outbound email behaviors and replace them with on-screen confirmation messages and admin dashboard visibility of submissions.",
+      "files": [
+        "frontend/src/pages/ContactPage.tsx",
+        "frontend/src/pages/HandymanRegistrationPage.tsx",
+        "frontend/src/pages/HireHandymanPage.tsx",
+        "frontend/src/pages/admin/AdminDashboardPage.tsx"
+      ],
+      "components": [
+        "authorization@4.0.0",
+        "blob-storage@4.0.0",
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-17"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

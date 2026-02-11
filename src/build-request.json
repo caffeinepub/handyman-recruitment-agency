@@ -1,0 +1,350 @@
+{
+  "kind": "build_request",
+  "title": "Handyman Recruitment Agency website with registration, uploads, admin dashboard, and SEO (no email)",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-1",
+      "text": "Create the public site pages and navigation for Handyman Recruitment Agency: Home, Handyman Registration, Hire a Handyman, Services Offered, About Us, Contact, Privacy Policy, and Admin.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "## 3. Website Pages / Structure"
+        ]
+      },
+      "acceptanceCriteria": [
+        "A top navigation (and mobile hamburger menu) links to all pages.",
+        "All pages render correctly on mobile and desktop.",
+        "Routes are accessible directly via URL without blank screens."
+      ]
+    },
+    {
+      "id": "REQ-2",
+      "text": "Apply a consistent professional visual theme using the brand colors Black, Yellow, and Navy, with a clean 'trade/industrial' look (bold headings, high-contrast buttons, simple icons) and large clear CTAs.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "## 6. Design Requirements\n\n* Professional and clean layout\n* Colours: Black, Yellow, Navy (Brand identity)\n* Easy navigation menu\n* Large clear buttons\n* Simple fonts"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Primary buttons use high-contrast styling and are easily tappable on mobile.",
+        "Typography is consistent across all pages (headings, body, labels).",
+        "No blue/purple default theme is used unless it matches the specified Navy tone."
+      ]
+    },
+    {
+      "id": "REQ-3",
+      "text": "Add the uploaded agency logo (20260211_195621.png) as a static asset and use it in the site header and Home page hero area.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "* Agency logo and name"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Logo file is stored as a static asset (not served through the backend).",
+        "Header displays the logo and the agency name.",
+        "Logo scales correctly on mobile without distortion or overflow."
+      ]
+    },
+    {
+      "id": "REQ-4",
+      "text": "Implement the Home page content: short intro, CTA buttons for “Register as a Handyman” and “Hire a Handyman”, contact number 0712115763 (click-to-call + WhatsApp link), email link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating locations (Uitenhage and Gqeberha), and a simple 3-step “How it works” section.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4"
+        ],
+        "quotes": [
+          "Clear Call-to-Action buttons:\n\n  * \"Register as a Handyman\"\n  * \"Hire a Handyman\"\n* Contact number: 0712115763 (Call & WhatsApp clickable)\n* Email: [hragency@gmail.com](mailto:hragency@gmail.com)\n* Facebook: Handyman Recruitment Agency (clickable link)\n* Operating Locations: Uitenhage and Gqeberha\n* Short explanation of how it works (3 simple steps)",
+          "an active email is hragency415@gmail.com"
+        ]
+      },
+      "acceptanceCriteria": [
+        "CTA buttons navigate to the correct pages.",
+        "Phone link uses tel: and WhatsApp link opens wa.me (or api.whatsapp.com) for 0712115763.",
+        "Email link uses mailto:hragency415@gmail.com.",
+        "Operating locations and 3-step section are visible above the fold on mobile (or with minimal scrolling)."
+      ]
+    },
+    {
+      "id": "REQ-5",
+      "text": "Add a floating WhatsApp button anchored bottom-right across the public site, linking to WhatsApp chat for 0712115763.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Floating WhatsApp button (bottom right corner of website) linked to 0712115763"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Floating button is visible on all public pages and does not block key UI elements.",
+        "Clicking the button opens WhatsApp chat for 0712115763."
+      ]
+    },
+    {
+      "id": "REQ-6",
+      "text": "Build the Handyman Registration page with a simple form capturing personal information (Full Name, ID Number, Phone Number, Email Address, Physical Address), work information (Trade/Skill, Years of Experience, Areas willing to work in), and document uploads for CV (PDF), ID Copy, Matric Certificate, Qualification/Trade Certificate; on submit, store the submission and show confirmation text: “Your application has been received. We will contact you if shortlisted.”",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "### 2. Handyman Registration Page\n\nSimple online form with the following fields:\n\nPersonal Information:\n\n* Full Name\n* ID Number\n* Phone Number\n* Email Address\n* Physical Address\n\nWork Information:\n\n* Trade / Skill (Plumber, Electrician, Painter, Carpenter, etc.)\n* Years of Experience\n* Areas willing to work in\n\nDocument Upload Section:\n\n* Upload CV (PDF)\n* Upload ID Copy\n* Upload Matric Certificate\n* Upload Qualification/Trade Certificate\n\nSubmit Button\n\nAfter submission:\n\n* Confirmation message: \"Your application has been received. We will contact you if shortlisted.\""
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form validates required fields and prevents submit when missing.",
+        "CV upload enforces PDF; other documents accept common image/PDF formats.",
+        "After successful submit, the confirmation message is shown and the form is cleared or disabled to prevent accidental resubmission.",
+        "Submission is persisted in the backend and visible in the admin dashboard."
+      ]
+    },
+    {
+      "id": "REQ-7",
+      "text": "Build the Hire a Handyman page with a client enquiry form (Full Name, Company Name (optional), Phone Number, Email, Type of service needed, Location, Message); on submit, store the enquiry and show an on-screen confirmation message (no email).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-7"
+        ],
+        "quotes": [
+          "### 3. Hire a Handyman (Client Contact Page)\n\nSimple client form:\n\n* Full Name\n* Company Name (if applicable)\n* Phone Number\n* Email\n* Type of service needed\n* Location\n* Message box (describe job)\n\nSubmit button\n\nAfter submission:\n\n* Confirmation message\n* Auto email notification to agency",
+          "2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Form submission persists to backend and appears in admin dashboard.",
+        "After submit, an on-screen confirmation message is displayed.",
+        "No outbound email is attempted."
+      ]
+    },
+    {
+      "id": "REQ-8",
+      "text": "Build the Contact page including: clickable phone 0712115763, WhatsApp link/button to 0712115763, mailto link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating areas (Uitenhage and Gqeberha), plus simple candidate and client contact forms that store messages in the backend (no email).",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-4",
+          "msg-7"
+        ],
+        "quotes": [
+          "### 5. Contact Page\n\n* Phone: 0712115763 (click to call)\n* WhatsApp: 0712115763 (clickable WhatsApp button)\n* Email: [hragency@gmail.com](mailto:hragency@gmail.com)\n* Facebook: Handyman Recruitment Agency\n* Operating Areas: Uitenhage and Gqeberha\n* Simple contact form\n* Candidate message form that sends directly to: [hragency@gmail.com](mailto:hragency@gmail.com)\n* Client enquiry form that sends directly to: [hragency@gmail.com](mailto:hragency@gmail.com)",
+          "an active email is hragency415@gmail.com",
+          "2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Contact details render as clickable links.",
+        "Both forms save submissions in backend storage and are viewable in admin.",
+        "No outbound email is attempted."
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Create Services Offered and About Us pages with short, professional copy matching the brief (client services, candidate services; mission, vision, commitment).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "### 6. Services Offered\n\nThe website must clearly display the following services:\n\nFor Clients:\n\n* Sourcing skilled and semi-skilled handymen\n* Pre-screening and verification of documents\n* Recruitment for:\n\n  * Plumbers\n  * Electricians\n  * Carpenters\n  * Painters\n  * Welders\n  * General maintenance workers\n* Temporary and permanent placements\n\nFor Candidates:\n\n* Job placement assistance\n* Profile registration\n* Document submission and verification",
+          "### 4. About Us Page\n\n* Short background of Handyman Recruitment Agency\n* Mission\n* Vision\n* Commitment to quality and professionalism\n\nKeep it short and professional."
+        ]
+      },
+      "acceptanceCriteria": [
+        "Services page lists all requested bullet points.",
+        "About page includes background, mission, vision, and commitment in a concise format."
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Implement backend data storage for candidate registrations (including uploaded documents), client enquiries, and contact messages using the single Motoko actor; include timestamps and stable unique IDs for each record.",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-1",
+          "msg-7"
+        ],
+        "quotes": [
+          "All information must go to agency email and also be stored in a secure database.",
+          "2"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each submission type is stored and can be listed and retrieved by ID.",
+        "Records include createdAt timestamp and a unique ID.",
+        "Data persists across canister upgrades using stable storage patterns."
+      ]
+    },
+    {
+      "id": "REQ-11",
+      "text": "Implement secure document upload handling: allow uploading the required candidate documents, store them in the backend associated to the candidate record, and allow authorized admin users to download them via the admin dashboard.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Secure document upload system",
+          "Admin must be able to:\n\n* Download uploaded documents"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Candidate document uploads complete successfully and are tied to the correct candidate record.",
+        "Admin can download each uploaded document from the dashboard.",
+        "Uploaded documents are not publicly accessible via the public site UI."
+      ]
+    },
+    {
+      "id": "REQ-12",
+      "text": "Build an Admin dashboard that lets an authorized admin: view candidate registrations and client/contact submissions; filter candidates by Trade/Skill; view submission details; download candidate documents; update and delete records.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "## 7. Technical Requirements\n\n* Secure database storage\n* Admin dashboard to view:\n\n  * Candidate registrations\n  * Uploaded documents\n  * Client enquiries\n\nAdmin must be able to:\n\n* Download uploaded documents\n* Filter candidates by skill\n* Delete or update records"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Admin dashboard is not accessible to anonymous users.",
+        "Candidate list supports filtering by Trade/Skill.",
+        "Admin can open a candidate detail view and download each uploaded document.",
+        "Admin can update and delete a candidate/enquiry/message and the list reflects changes."
+      ]
+    },
+    {
+      "id": "REQ-13",
+      "text": "Add admin authentication using Internet Identity and enforce backend authorization checks for all admin-only operations (list all records, download documents, update/delete). Provide a simple allowlist mechanism for admin principals and show the currently signed-in principal in the admin UI for setup.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Secure database storage",
+          "Admin dashboard"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Unauthenticated users cannot access admin data endpoints (backend rejects calls).",
+        "Admin UI displays the current principal and whether it is authorized.",
+        "Authorized principal(s) can perform admin operations successfully."
+      ]
+    },
+    {
+      "id": "REQ-14",
+      "text": "Implement basic SEO and Google indexing readiness: set page-specific meta titles/descriptions, add a robots.txt and sitemap, and ensure semantic headings and accessible form labels.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "Be searchable and visible on Google.",
+          "Basic SEO (Search Engine Optimization)",
+          "Google indexing so the website appears in Google search results"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Each main route has a unique meta title and meta description.",
+        "robots.txt and sitemap are available as static files.",
+        "Forms use proper label associations and pages use clear H1/H2 structure."
+      ]
+    },
+    {
+      "id": "REQ-15",
+      "text": "Add a Privacy Policy page addressing POPIA-oriented handling of personal data and documents (what is collected, why, retention, access/deletion requests, and contact details).",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "* Privacy policy page\n* POPIA compliance (South Africa)\n* Data must not be shared without consent"
+        ]
+      },
+      "acceptanceCriteria": [
+        "Privacy Policy page exists and is linked from the site footer.",
+        "Content clearly describes collection and use of personal data and uploaded documents in plain English."
+      ]
+    },
+    {
+      "id": "REQ-16",
+      "text": "Ensure the public site is fast and mobile-first: optimize images, avoid heavy assets, and ensure forms and buttons are easy to use on small screens.",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-1"
+        ],
+        "quotes": [
+          "* Mobile responsive (must work perfectly on phones)\n* Fast loading speed"
+        ]
+      },
+      "acceptanceCriteria": [
+        "All pages are usable on a phone-sized viewport without horizontal scrolling.",
+        "Largest images are sized appropriately and do not cause noticeable layout shifts.",
+        "Form interactions (typing, selecting files, submitting) remain responsive on mobile."
+      ]
+    },
+    {
+      "id": "REQ-17",
+      "text": "Because email sending is disabled, remove/omit all outbound email behaviors and replace them with on-screen confirmation messages and admin dashboard visibility of submissions.",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-7",
+          "msg-8"
+        ],
+        "quotes": [
+          "2",
+          "Proceed without email, and I will build the website so all submissions are stored only in the admin dashboard (no email notifications)."
+        ]
+      },
+      "acceptanceCriteria": [
+        "No code path attempts to send emails.",
+        "All form submissions provide an immediate on-screen success message.",
+        "Admin can see all submissions that would otherwise have been emailed."
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not implement any outbound email functionality (email is disabled).",
+    "Backend must remain a single Motoko actor (no additional backend services).",
+    "Do not edit files under frontend/src/components/ui or other immutable paths listed in SYSTEM_CONTEXT; only compose/reuse them."
+  ],
+  "nonGoals": [
+    "No gallery page.",
+    "No blog.",
+    "No booking system.",
+    "No payment gateway.",
+    "No third-party authentication providers beyond Internet Identity.",
+    "No Google Search Console API integration (provide only on-site SEO readiness, not automated setup)."
+  ],
+  "imageRequirements": {
+    "required": [
+      "Square favicon based on the provided logo (favicon.dim_512x512.png)",
+      "Open Graph share image with the logo on a clean black/yellow/navy background (og-image.dim_1200x630.png)"
+    ],
+    "edits": []
+  }
+}

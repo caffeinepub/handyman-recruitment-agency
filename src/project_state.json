@@ -1,0 +1,209 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 3,
+  "summary": "Build a simple, professional, mobile-friendly Handyman Recruitment Agency website with candidate registration (including secure document uploads) and client enquiry forms, multiple informational pages, SEO/Google visibility setup, and an admin dashboard for managing submissions. User chose to proceed without email functionality; submissions will be stored in the database/admin dashboard only (no outbound emails or auto-confirmations).",
+  "architectural_notes": [
+    "Email notifications are disabled by choice/constraints; forms will not send emails or auto-confirmations and will store submissions in the database for admin review only."
+  ],
+  "known_issues": [],
+  "isFixRequest": false,
+  "imageRequirements": "## Required Images\n- Square favicon based on the provided logo (favicon.dim_512x512.png)\n- Open Graph share image with the logo on a clean black/yellow/navy background (og-image.dim_1200x630.png)",
+  "existing_features": [
+    {
+      "id": "feature-create-the-public-site-pages-and-navigation-for-handyman-recruitment-agency-home-handyman-registration-hire-a-handyman-services-offered-about-us-contact-privacy-policy-and-admin",
+      "title": "Create the public site pages and navigation for Handyman Recruitment Agency: Home, Handyman Registration, Hire a Handyman, Services Offered, About Us, Contact, Privacy Policy, and Admin.",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-consistent-professional-visual-theme-using-the-brand-colors-black-yellow-and-navy-with-a-clean-trade-industrial-look-bold-headings-high-contrast-buttons-simple-icons-and-large-clear-ctas",
+      "title": "Apply a consistent professional visual theme using the brand colors Black, Yellow, and Navy, with a clean 'trade/industrial' look (bold headings, high-contrast buttons, simple icons) and large clear CTAs.",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-the-uploaded-agency-logo-20260211-195621-png-as-a-static-asset-and-use-it-in-the-site-header-and-home-page-hero-area",
+      "title": "Add the uploaded agency logo (20260211_195621.png) as a static asset and use it in the site header and Home page hero area.",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-the-home-page-content-short-intro-cta-buttons-for-register-as-a-handyman-and-hire-a-handyman-contact-number-0712115763-click-to-call-whatsapp-link-email-link-to-hragency415-gmail-com-facebook-link-text-handyman-recruitment-agency-operating-locations-uitenhage-and-gqeberha-and-a-simple-3-step-how-it-works-section",
+      "title": "Implement the Home page content: short intro, CTA buttons for “Register as a Handyman” and “Hire a Handyman”, contact number 0712115763 (click-to-call + WhatsApp link), email link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating locations (Uitenhage and Gqeberha), and a simple 3-step “How it works” section.",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-floating-whatsapp-button-anchored-bottom-right-across-the-public-site-linking-to-whatsapp-chat-for-0712115763",
+      "title": "Add a floating WhatsApp button anchored bottom-right across the public site, linking to WhatsApp chat for 0712115763.",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-handyman-registration-page-with-a-simple-form-capturing-personal-information-full-name-id-number-phone-number-email-address-physical-address-work-information-trade-skill-years-of-experience-areas-willing-to-work-in-and-document-uploads-for-cv-pdf-id-copy-matric-certificate-qualification-trade-certificate-on-submit-store-the-submission-and-show-confirmation-text-your-application-has-been-received-we-will-contact-you-if-shortlisted",
+      "title": "Build the Handyman Registration page with a simple form capturing personal information (Full Name, ID Number, Phone Number, Email Address, Physical Address), work information (Trade/Skill, Years of Experience, Areas willing to work in), and document uploads for CV (PDF), ID Copy, Matric Certificate, Qualification/Trade Certificate; on submit, store the submission and show confirmation text: “Your application has been received. We will contact you if shortlisted.”",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-hire-a-handyman-page-with-a-client-enquiry-form-full-name-company-name-optional-phone-number-email-type-of-service-needed-location-message-on-submit-store-the-enquiry-and-show-an-on-screen-confirmation-message-no-email",
+      "title": "Build the Hire a Handyman page with a client enquiry form (Full Name, Company Name (optional), Phone Number, Email, Type of service needed, Location, Message); on submit, store the enquiry and show an on-screen confirmation message (no email).",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-the-contact-page-including-clickable-phone-0712115763-whatsapp-link-button-to-0712115763-mailto-link-to-hragency415-gmail-com-facebook-link-text-handyman-recruitment-agency-operating-areas-uitenhage-and-gqeberha-plus-simple-candidate-and-client-contact-forms-that-store-messages-in-the-backend-no-email",
+      "title": "Build the Contact page including: clickable phone 0712115763, WhatsApp link/button to 0712115763, mailto link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating areas (Uitenhage and Gqeberha), plus simple candidate and client contact forms that store messages in the backend (no email).",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-create-services-offered-and-about-us-pages-with-short-professional-copy-matching-the-brief-client-services-candidate-services-mission-vision-commitment",
+      "title": "Create Services Offered and About Us pages with short, professional copy matching the brief (client services, candidate services; mission, vision, commitment).",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-secure-document-upload-handling-allow-uploading-the-required-candidate-documents-store-them-in-the-backend-associated-to-the-candidate-record-and-allow-authorized-admin-users-to-download-them-via-the-admin-dashboard",
+      "title": "Implement secure document upload handling: allow uploading the required candidate documents, store them in the backend associated to the candidate record, and allow authorized admin users to download them via the admin dashboard.",
+      "reqIds": [
+        "REQ-11"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-build-an-admin-dashboard-that-lets-an-authorized-admin-view-candidate-registrations-and-client-contact-submissions-filter-candidates-by-trade-skill-view-submission-details-download-candidate-documents-update-and-delete-records",
+      "title": "Build an Admin dashboard that lets an authorized admin: view candidate registrations and client/contact submissions; filter candidates by Trade/Skill; view submission details; download candidate documents; update and delete records.",
+      "reqIds": [
+        "REQ-12"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-admin-authentication-using-internet-identity-and-enforce-backend-authorization-checks-for-all-admin-only-operations-list-all-records-download-documents-update-delete-provide-a-simple-allowlist-mechanism-for-admin-principals-and-show-the-currently-signed-in-principal-in-the-admin-ui-for-setup",
+      "title": "Add admin authentication using Internet Identity and enforce backend authorization checks for all admin-only operations (list all records, download documents, update/delete). Provide a simple allowlist mechanism for admin principals and show the currently signed-in principal in the admin UI for setup.",
+      "reqIds": [
+        "REQ-13"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-basic-seo-and-google-indexing-readiness-set-page-specific-meta-titles-descriptions-add-a-robots-txt-and-sitemap-and-ensure-semantic-headings-and-accessible-form-labels",
+      "title": "Implement basic SEO and Google indexing readiness: set page-specific meta titles/descriptions, add a robots.txt and sitemap, and ensure semantic headings and accessible form labels.",
+      "reqIds": [
+        "REQ-14"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-add-a-privacy-policy-page-addressing-popia-oriented-handling-of-personal-data-and-documents-what-is-collected-why-retention-access-deletion-requests-and-contact-details",
+      "title": "Add a Privacy Policy page addressing POPIA-oriented handling of personal data and documents (what is collected, why, retention, access/deletion requests, and contact details).",
+      "reqIds": [
+        "REQ-15"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-ensure-the-public-site-is-fast-and-mobile-first-optimize-images-avoid-heavy-assets-and-ensure-forms-and-buttons-are-easy-to-use-on-small-screens",
+      "title": "Ensure the public site is fast and mobile-first: optimize images, avoid heavy assets, and ensure forms and buttons are easy to use on small screens.",
+      "reqIds": [
+        "REQ-16"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-because-email-sending-is-disabled-remove-omit-all-outbound-email-behaviors-and-replace-them-with-on-screen-confirmation-messages-and-admin-dashboard-visibility-of-submissions",
+      "title": "Because email sending is disabled, remove/omit all outbound email behaviors and replace them with on-screen confirmation messages and admin dashboard visibility of submissions.",
+      "reqIds": [
+        "REQ-17"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Create core website pages (Home, About Us, Services Offered, Contact) with clean black/yellow/navy design, mobile responsiveness, and clear CTAs",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Handyman Registration page: online form capturing personal/work info and secure document uploads (CV, ID, Matric, qualifications/trade certificates) with on-screen confirmation message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Hire a Handyman (client contact) page: client enquiry form with on-screen confirmation message",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Admin dashboard to view/manage candidate registrations, uploaded documents, and client enquiries; allow filtering by skill; download documents; update/delete records",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Database storage for all submissions and uploaded documents with secure handling",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "SEO & Google visibility: meta titles/descriptions, basic SEO, Google indexing readiness, Google Search Console setup guidance, and Google Business Profile linkage guidance",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-7",
+      "summary": "Site-wide WhatsApp/click-to-call features: floating WhatsApp button linked to 0712115763 plus clickable phone/email/Facebook links",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Privacy & compliance: add Privacy Policy page and address POPIA-oriented data handling requirements",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-9",
+      "summary": "HTTPS/SSL and performance: ensure SSL-enabled deployment and fast-loading, mobile-first implementation",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-19",
+      "summary": "Implement backend data storage for candidate registrations (including uploaded documents), client enquiries, and contact messages using the single Motoko actor; include timestamps and stable unique IDs for each record.",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Handyman Recruitment Agency",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}

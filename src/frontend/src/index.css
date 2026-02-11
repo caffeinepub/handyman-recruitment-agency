@@ -1,0 +1,93 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.5rem;
+    
+    /* Brand Colors - Black/Yellow/Navy theme */
+    --brand-black: 0.145 0 0;
+    --brand-orange: 0.65 0.18 45;
+    --brand-navy: 0.25 0.08 250;
+    
+    /* Light mode */
+    --background: 1 0 0;
+    --foreground: 0.145 0 0;
+    --card: 1 0 0;
+    --card-foreground: 0.145 0 0;
+    --popover: 1 0 0;
+    --popover-foreground: 0.145 0 0;
+    --primary: 0.145 0 0;
+    --primary-foreground: 1 0 0;
+    --secondary: 0.96 0 0;
+    --secondary-foreground: 0.145 0 0;
+    --muted: 0.96 0 0;
+    --muted-foreground: 0.5 0 0;
+    --accent: 0.96 0 0;
+    --accent-foreground: 0.145 0 0;
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 1 0 0;
+    --border: 0.9 0 0;
+    --input: 0.9 0 0;
+    --ring: 0.65 0.18 45;
+  }
+
+  .dark {
+    --background: 0.145 0 0;
+    --foreground: 0.98 0 0;
+    --card: 0.2 0 0;
+    --card-foreground: 0.98 0 0;
+    --popover: 0.2 0 0;
+    --popover-foreground: 0.98 0 0;
+    --primary: 0.98 0 0;
+    --primary-foreground: 0.145 0 0;
+    --secondary: 0.25 0 0;
+    --secondary-foreground: 0.98 0 0;
+    --muted: 0.25 0 0;
+    --muted-foreground: 0.65 0 0;
+    --accent: 0.3 0 0;
+    --accent-foreground: 0.98 0 0;
+    --destructive: 0.65 0.22 27;
+    --destructive-foreground: 0.98 0 0;
+    --border: 0.3 0 0;
+    --input: 0.3 0 0;
+    --ring: 0.65 0.18 45;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+  
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+@layer utilities {
+  .bg-brand-orange {
+    background-color: oklch(var(--brand-orange));
+  }
+  
+  .text-brand-orange {
+    color: oklch(var(--brand-orange));
+  }
+  
+  .bg-brand-navy {
+    background-color: oklch(var(--brand-navy));
+  }
+  
+  .text-brand-navy {
+    color: oklch(var(--brand-navy));
+  }
+  
+  .border-brand-orange {
+    border-color: oklch(var(--brand-orange));
+  }
+}

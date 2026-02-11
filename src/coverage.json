@@ -1,0 +1,420 @@
+{
+  "kind": "coverage_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-11T20:27:03.306Z",
+  "sources": {
+    "buildRequest": true,
+    "implementationPlan": true
+  },
+  "requirements": {
+    "total": 17,
+    "implemented": 16,
+    "items": [
+      {
+        "id": "REQ-1",
+        "summary": "Create the public site pages and navigation for Handyman Recruitment Agency: Home, Handyman Registration, Hire a Handyman, Services Offered, About Us, Contact, Privacy Policy, and Admin.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/main.tsx",
+          "frontend/src/components/layout/SiteLayout.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/App.tsx",
+          "frontend/src/main.tsx",
+          "frontend/src/components/layout/SiteLayout.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/components/layout/Footer.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-10",
+        "summary": "Implement backend data storage for candidate registrations (including uploaded documents), client enquiries, and contact messages using the single Motoko actor; include timestamps and stable unique IDs for each record.",
+        "status": "unknown",
+        "plannedFiles": [],
+        "matchedFiles": []
+      },
+      {
+        "id": "REQ-11",
+        "summary": "Implement secure document upload handling: allow uploading the required candidate documents, store them in the backend associated to the candidate record, and allow authorized admin users to download them via the admin dashboard.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/hooks/useCandidateRegistration.ts",
+          "frontend/src/pages/admin/components/DocumentDownloadList.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HandymanRegistrationPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-12",
+        "summary": "Build an Admin dashboard that lets an authorized admin: view candidate registrations and client/contact submissions; filter candidates by Trade/Skill; view submission details; download candidate documents; update and delete records.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "frontend/src/pages/admin/components/CandidateList.tsx",
+          "frontend/src/pages/admin/components/CandidateDetail.tsx",
+          "frontend/src/pages/admin/components/EnquiryList.tsx",
+          "frontend/src/pages/admin/components/ContactMessageList.tsx",
+          "frontend/src/hooks/admin/useAdminData.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/admin/AdminDashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-13",
+        "summary": "Add admin authentication using Internet Identity and enforce backend authorization checks for all admin-only operations (list all records, download documents, update/delete). Provide a simple allowlist mechanism for admin principals and show the currently signed-in principal in the admin UI for setup.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/admin/AdminGuard.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "frontend/src/pages/admin/components/AdminSetupPanel.tsx",
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/App.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/admin/AdminGuard.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx",
+          "frontend/src/components/auth/LoginButton.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/App.tsx"
+        ]
+      },
+      {
+        "id": "REQ-14",
+        "summary": "Implement basic SEO and Google indexing readiness: set page-specific meta titles/descriptions, add a robots.txt and sitemap, and ensure semantic headings and accessible form labels.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Seo.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/public/robots.txt",
+          "frontend/public/sitemap.xml",
+          "frontend/public/assets/generated/favicon.dim_512x512.png",
+          "frontend/public/assets/generated/og-image.dim_1200x630.png",
+          "frontend/index.html"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Seo.tsx",
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/public/robots.txt",
+          "frontend/public/sitemap.xml",
+          "frontend/public/assets/generated/favicon.dim_512x512.png",
+          "frontend/public/assets/generated/og-image.dim_1200x630.png",
+          "frontend/index.html"
+        ]
+      },
+      {
+        "id": "REQ-15",
+        "summary": "Add a Privacy Policy page addressing POPIA-oriented handling of personal data and documents (what is collected, why, retention, access/deletion requests, and contact details).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/PrivacyPolicyPage.tsx",
+          "frontend/src/components/layout/Footer.tsx"
+        ]
+      },
+      {
+        "id": "REQ-16",
+        "summary": "Ensure the public site is fast and mobile-first: optimize images, avoid heavy assets, and ensure forms and buttons are easy to use on small screens.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/Brand/Logo.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/index.css"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Brand/Logo.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/index.css"
+        ]
+      },
+      {
+        "id": "REQ-17",
+        "summary": "Because email sending is disabled, remove/omit all outbound email behaviors and replace them with on-screen confirmation messages and admin dashboard visibility of submissions.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/pages/admin/AdminDashboardPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-2",
+        "summary": "Apply a consistent professional visual theme using the brand colors Black, Yellow, and Navy, with a clean 'trade/industrial' look (bold headings, high-contrast buttons, simple icons) and large clear CTAs.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js",
+          "frontend/src/components/ui/BrandButton.tsx",
+          "frontend/src/components/ui/SectionHeading.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/index.css",
+          "frontend/tailwind.config.js"
+        ]
+      },
+      {
+        "id": "REQ-3",
+        "summary": "Add the uploaded agency logo (20260211_195621.png) as a static asset and use it in the site header and Home page hero area.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/public/assets/20260211_195621.png",
+          "frontend/src/components/Brand/Logo.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/Brand/Logo.tsx",
+          "frontend/src/components/layout/TopNav.tsx",
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-4",
+        "summary": "Implement the Home page content: short intro, CTA buttons for “Register as a Handyman” and “Hire a Handyman”, contact number 0712115763 (click-to-call + WhatsApp link), email link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating locations (Uitenhage and Gqeberha), and a simple 3-step “How it works” section.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HomePage.tsx",
+          "frontend/src/utils/contactLinks.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HomePage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-5",
+        "summary": "Add a floating WhatsApp button anchored bottom-right across the public site, linking to WhatsApp chat for 0712115763.",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/components/WhatsAppFloatingButton.tsx",
+          "frontend/src/components/layout/SiteLayout.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/components/WhatsAppFloatingButton.tsx",
+          "frontend/src/components/layout/SiteLayout.tsx"
+        ]
+      },
+      {
+        "id": "REQ-6",
+        "summary": "Build the Handyman Registration page with a simple form capturing personal information (Full Name, ID Number, Phone Number, Email Address, Physical Address), work information (Trade/Skill, Years of Experience, Areas willing to work in), and document uploads for CV (PDF), ID Copy, Matric Certificate, Qualification/Trade Certificate; on submit, store the submission and show confirmation text: “Your application has been received. We will contact you if shortlisted.”",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HandymanRegistrationPage.tsx",
+          "frontend/src/hooks/useCandidateRegistration.ts",
+          "frontend/src/components/forms/DocumentUploadField.tsx",
+          "frontend/src/components/ui/FormField.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HandymanRegistrationPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-7",
+        "summary": "Build the Hire a Handyman page with a client enquiry form (Full Name, Company Name (optional), Phone Number, Email, Type of service needed, Location, Message); on submit, store the enquiry and show an on-screen confirmation message (no email).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/HireHandymanPage.tsx",
+          "frontend/src/hooks/useEnquirySubmission.ts"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/HireHandymanPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-8",
+        "summary": "Build the Contact page including: clickable phone 0712115763, WhatsApp link/button to 0712115763, mailto link to hragency415@gmail.com, Facebook link text “Handyman Recruitment Agency”, operating areas (Uitenhage and Gqeberha), plus simple candidate and client contact forms that store messages in the backend (no email).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ContactPage.tsx",
+          "frontend/src/hooks/useContactSubmission.ts",
+          "frontend/src/components/contact/ContactDetailsCard.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ContactPage.tsx"
+        ]
+      },
+      {
+        "id": "REQ-9",
+        "summary": "Create Services Offered and About Us pages with short, professional copy matching the brief (client services, candidate services; mission, vision, commitment).",
+        "status": "implemented",
+        "plannedFiles": [
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ],
+        "matchedFiles": [
+          "frontend/src/pages/ServicesPage.tsx",
+          "frontend/src/pages/AboutPage.tsx"
+        ]
+      }
+    ]
+  },
+  "changedFiles": [
+    "backend/authorization/MixinAuthorization.mo",
+    "backend/authorization/access-control.mo",
+    "backend/blob-storage/Mixin.mo",
+    "backend/blob-storage/Storage.mo",
+    "backend/main.mo",
+    "build-request.json",
+    "build-template/Dockerfile",
+    "build-template/LICENSE",
+    "build-template/README.md",
+    "build-template/deploy.sh",
+    "build-template/icp.yaml",
+    "build-template/package.json",
+    "build-template/pnpm-lock.yaml",
+    "build-template/pnpm-workspace.yaml",
+    "build-template/scripts/prune-unused-images.js",
+    "build-template/scripts/resize-images.js",
+    "build-template/src/backend/canister.yaml",
+    "build-template/src/backend/system-idl/aaaaa-aa.did",
+    "build-template/src/frontend/canister.yaml",
+    "build-template/src/frontend/components.json",
+    "build-template/src/frontend/env.json",
+    "build-template/src/frontend/eslint-rules/no-bigint-in-query-keys.js",
+    "build-template/src/frontend/eslint-rules/require-internet-identity-provider.js",
+    "build-template/src/frontend/eslint.config.js",
+    "build-template/src/frontend/package.json",
+    "build-template/src/frontend/postcss.config.js",
+    "build-template/src/frontend/src/components/ui/accordion.tsx",
+    "build-template/src/frontend/src/components/ui/alert-dialog.tsx",
+    "build-template/src/frontend/src/components/ui/alert.tsx",
+    "build-template/src/frontend/src/components/ui/aspect-ratio.tsx",
+    "build-template/src/frontend/src/components/ui/avatar.tsx",
+    "build-template/src/frontend/src/components/ui/badge.tsx",
+    "build-template/src/frontend/src/components/ui/breadcrumb.tsx",
+    "build-template/src/frontend/src/components/ui/button.tsx",
+    "build-template/src/frontend/src/components/ui/calendar.tsx",
+    "build-template/src/frontend/src/components/ui/card.tsx",
+    "build-template/src/frontend/src/components/ui/carousel.tsx",
+    "build-template/src/frontend/src/components/ui/chart.tsx",
+    "build-template/src/frontend/src/components/ui/checkbox.tsx",
+    "build-template/src/frontend/src/components/ui/collapsible.tsx",
+    "build-template/src/frontend/src/components/ui/command.tsx",
+    "build-template/src/frontend/src/components/ui/context-menu.tsx",
+    "build-template/src/frontend/src/components/ui/dialog.tsx",
+    "build-template/src/frontend/src/components/ui/drawer.tsx",
+    "build-template/src/frontend/src/components/ui/dropdown-menu.tsx",
+    "build-template/src/frontend/src/components/ui/form.tsx",
+    "build-template/src/frontend/src/components/ui/hover-card.tsx",
+    "build-template/src/frontend/src/components/ui/input-otp.tsx",
+    "build-template/src/frontend/src/components/ui/input.tsx",
+    "build-template/src/frontend/src/components/ui/label.tsx",
+    "build-template/src/frontend/src/components/ui/menubar.tsx",
+    "build-template/src/frontend/src/components/ui/navigation-menu.tsx",
+    "build-template/src/frontend/src/components/ui/pagination.tsx",
+    "build-template/src/frontend/src/components/ui/popover.tsx",
+    "build-template/src/frontend/src/components/ui/progress.tsx",
+    "build-template/src/frontend/src/components/ui/radio-group.tsx",
+    "build-template/src/frontend/src/components/ui/resizable.tsx",
+    "build-template/src/frontend/src/components/ui/scroll-area.tsx",
+    "build-template/src/frontend/src/components/ui/select.tsx",
+    "build-template/src/frontend/src/components/ui/separator.tsx",
+    "build-template/src/frontend/src/components/ui/sheet.tsx",
+    "build-template/src/frontend/src/components/ui/sidebar.tsx",
+    "build-template/src/frontend/src/components/ui/skeleton.tsx",
+    "build-template/src/frontend/src/components/ui/slider.tsx",
+    "build-template/src/frontend/src/components/ui/sonner.tsx",
+    "build-template/src/frontend/src/components/ui/switch.tsx",
+    "build-template/src/frontend/src/components/ui/table.tsx",
+    "build-template/src/frontend/src/components/ui/tabs.tsx",
+    "build-template/src/frontend/src/components/ui/textarea.tsx",
+    "build-template/src/frontend/src/components/ui/toggle-group.tsx",
+    "build-template/src/frontend/src/components/ui/toggle.tsx",
+    "build-template/src/frontend/src/components/ui/tooltip.tsx",
+    "build-template/src/frontend/src/hooks/use-mobile.tsx",
+    "build-template/src/frontend/src/lib/utils.ts",
+    "build-template/src/frontend/tsconfig.json",
+    "build-template/src/frontend/vite.config.js",
+    "build-template/tsconfig.json",
+    "caffeine.lock.json",
+    "feature_evidence.json",
+    "frontend-file-summaries.txt",
+    "frontend-implementation-plan.json",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/public/assets/generated/favicon.dim_512x512.png",
+    "frontend/public/assets/generated/og-image.dim_1200x630.png",
+    "frontend/public/robots.txt",
+    "frontend/public/sitemap.xml",
+    "frontend/src/App.tsx",
+    "frontend/src/backend.d.ts",
+    "frontend/src/backend.ts",
+    "frontend/src/components/Brand/Logo.tsx",
+    "frontend/src/components/SectionHeading.tsx",
+    "frontend/src/components/Seo.tsx",
+    "frontend/src/components/WhatsAppFloatingButton.tsx",
+    "frontend/src/components/auth/LoginButton.tsx",
+    "frontend/src/components/layout/Footer.tsx",
+    "frontend/src/components/layout/SiteLayout.tsx",
+    "frontend/src/components/layout/TopNav.tsx",
+    "frontend/src/config.ts",
+    "frontend/src/declarations/backend.did.d.ts",
+    "frontend/src/declarations/backend.did.js",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/src/pages/AboutPage.tsx",
+    "frontend/src/pages/ContactPage.tsx",
+    "frontend/src/pages/HandymanRegistrationPage.tsx",
+    "frontend/src/pages/HireHandymanPage.tsx",
+    "frontend/src/pages/HomePage.tsx",
+    "frontend/src/pages/PrivacyPolicyPage.tsx",
+    "frontend/src/pages/ServicesPage.tsx",
+    "frontend/src/pages/admin/AdminDashboardPage.tsx",
+    "frontend/src/pages/admin/AdminGuard.tsx",
+    "frontend/src/ui-summary.json",
+    "frontend/src/utils/StorageClient.ts",
+    "frontend/src/utils/urlParams.ts",
+    "frontend/tailwind.config.js",
+    "project_state.json",
+    "scratch/component-selection.json",
+    "spec.md",
+    "spec_vs_diff_report.json"
+  ]
+}
